@@ -36,12 +36,21 @@ jobs:
               ${{ steps.docker.outputs.repository }}:git-${{ github.sha }}
               ${{ steps.docker.outputs.repository }}:latest
 
+  check-conventional-commits:
+    uses: armakuni/github-actions/.github/workflows/check-conventional-commits.yml@v0.16.2
+
+  lint-pipeline:
+    uses: armakuni/github-actions/.github/workflows/lint-pipeline.yml@v0.16.2
+
+
   all-tests-succeeded:
     needs:
       - docker-build
+      - check-conventional-commits
+      - lint-pipeline
     runs-on: ubuntu-latest
     steps:
-      - run: true
+      - run: "true"
         shell: bash
 
   release:
