@@ -42,7 +42,7 @@ For a cronjob put this after the restore in the init, for a deployment put this 
 
 ```yaml
           - name: backup
-            image: registry.gitlab.com/solace-system/media-apps/restic:latest
+            image: ghcr.io/purplebooth/utility-container-restic:latest
             imagePullPolicy: Always
             securityContext:
               runAsUser: 568
