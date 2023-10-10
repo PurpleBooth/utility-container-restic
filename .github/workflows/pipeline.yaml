@@ -6,29 +6,24 @@ on:
 name: Pipeline
 
 jobs:
-  shellcheck:
+  check-shell:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.0
+      - name: Install Shfmt
+        uses: taiki-e/install-action@v2
+        with:
+          tool: shfmt
       - name: Install ShellCheck
         uses: taiki-e/install-action@v2
         with:
           tool: shellcheck
+      - name: Run Shfmt
+        run: shfmt --find . | xargs shfmt --simplify --diff
       - name: Run ShellCheck
-        run: shellcheck ./**/*.sh
+        run: shfmt --find . | xargs shellcheck
 
-  shfmt:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.0
-      - name: Install ShellCheck
-        uses: taiki-e/install-action@v2
-        with:
-          tool: shfmt
-      - name: Run ShellCheck
-        run: shfmt --simplify --diff ./**/*.sh
 
   docker-build:
       runs-on: ubuntu-latest
@@ -69,8 +64,7 @@ jobs:
 
   all-tests-succeeded:
     needs:
-      - shfmt
-      - shellcheck
+      - check-shell
       - docker-build
       - check-conventional-commits
       - lint-pipeline
