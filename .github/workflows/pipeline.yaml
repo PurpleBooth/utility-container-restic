@@ -55,6 +55,8 @@ jobs:
 
   release:
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
     needs:
       - all-tests-succeeded
     outputs:
