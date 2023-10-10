@@ -1,6 +1,6 @@
 # utility-container-restic
 
-A container I use for my backups
+A container I use for my backups. Has both [restic](https://github.com/restic/restic) and [rustic](https://github.com/rustic-rs/rustic/) in it. Uses rustic for the scripts.
 
 ## Usage
 
