@@ -35,7 +35,7 @@ while [[ $# -gt 0 ]]; do
 		shift # past argument
 		shift # past value
 		;;
-	-* | --*)
+	--* | -*)
 		echo "Unknown option $1"
 		exit 1
 		;;
@@ -57,7 +57,7 @@ function backup() {
 		--cache-dir "$RESTIC_CACHE_DIR" \
 		--password-file "$RESTIC_PASSWORD_FILE" \
 		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
-		--host "$RESTIC_HOST" \
+		--host "$backup_host" \
 		"$@"
 }
 
