@@ -36,10 +36,18 @@ jobs:
               ${{ steps.docker.outputs.repository }}:git-${{ github.sha }}
               ${{ steps.docker.outputs.repository }}:latest
 
+  all-tests-succeeded:
+    needs:
+      - docker-build
+    runs-on: ubuntu-latest
+    steps:
+      - run: true
+        shell: bash
+
   release:
     if: github.ref == 'refs/heads/main'
     needs:
-      - docker-build
+      - all-tests-succeeded
     outputs:
       version_bump: ${{ steps.current_version.outputs.current_version != steps.previous_version.outputs.previous_version }}
       current_version: ${{ steps.current_version.outputs.current_version }}
