@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.2.1 - 2023-10-10
+#### Bug Fixes
+- Fix ordering of matches - (fae38c9) - Billie Thompson
+- Add shellcheck and shfmt and fix problems - (5b72226) - Billie Thompson
+#### Continuous Integration
+- Correct the shellsheck and shell format comamnd - (5ba1b1e) - Billie Thompson
+- Give permissions to publish to docker repo - (051acbf) - Billie Thompson
+- Cache cargo edit install - (c54838d) - Billie Thompson
+#### Documentation
+- Create CODE_OF_CONDUCT.md - (c0e8266) - Billie Thompson
+- Add links to the projects it uses - (df51846) - Billie Thompson
+- Correct the image name - (2d63eb9) - Billie Thompson
+- Readme - (710aa91) - Billie Thompson
+
+- - -
+
 ## v0.2.0 - 2023-10-10
 #### Bug Fixes
 - Set the frontend to be non-interactive - (2e60392) - Billie Thompson
