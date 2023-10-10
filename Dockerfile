@@ -1,17 +1,17 @@
 FROM ubuntu:latest
 
 ## Upgrade
-RUN apt-get update && apt-get upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
 
 ## Fix for missing CA
-RUN apt-get install -y dnsutils ca-certificates
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y dnsutils ca-certificates
 
 ## Install rclone
-RUN apt-get install -y curl p7zip-full bash
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl p7zip-full bash
 RUN curl https://rclone.org/install.sh | bash && rclone --version
 
 ## Install restic
-RUN apt-get install -y bzip2 curl bash
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bzip2 curl bash
 RUN curl -Lo restic.bz2 "https://github.com/restic/restic/releases/latest/download/restic_$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/restic/restic/releases/latest | xargs basename | cut -d'v' -f2)_linux_"$(arch | sed s/aarch64/arm64/ | sed s/x86_64/amd64/)".bz2" \
       && bzip2 -d restic.bz2 \
       && chmod -v +x restic \
@@ -19,7 +19,7 @@ RUN curl -Lo restic.bz2 "https://github.com/restic/restic/releases/latest/downlo
       && restic version
 
 ## Install rustic
-RUN apt-get install -y tar curl bash tar gzip
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tar curl bash tar gzip
 RUN curl -Lo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/download/rustic-$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/rustic-rs/rustic/releases/latest | xargs basename)-$(arch)-unknown-linux-gnu.tar.gz" \
       && tar xvzf rustic.tar.gz \
       && chmod -v +x rustic \
@@ -27,7 +27,7 @@ RUN curl -Lo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/
       && rustic --version
 
 ## Helper scripts
-RUN apt-get install -y jq
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y jq
 ADD restic-backup.sh /usr/local/bin/restic-backup
 ADD restic-restore.sh /usr/local/bin/restic-restore
 RUN chmod -v +x /usr/local/bin/restic-backup /usr/local/bin/restic-restore
