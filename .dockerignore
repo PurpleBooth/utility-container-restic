@@ -1,0 +1,4 @@
+*
+!restic-backup.sh
+!restic-restore.sh
+!Dockerfile

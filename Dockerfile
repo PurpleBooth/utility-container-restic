@@ -28,8 +28,8 @@ RUN curl -Lo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/
 
 ## Helper scripts
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y jq
-ADD restic-backup.sh /usr/local/bin/restic-backup
-ADD restic-restore.sh /usr/local/bin/restic-restore
+COPY restic-backup.sh /usr/local/bin/restic-backup
+COPY restic-restore.sh /usr/local/bin/restic-restore
 RUN chmod -v +x /usr/local/bin/restic-backup /usr/local/bin/restic-restore
 
 RUN groupadd -g 568 nonroot
