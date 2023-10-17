@@ -52,6 +52,7 @@ function backup() {
 
 	echo "Backing up"
 	rustic backup \
+		--no-progress \
 		--exclude-if-present ".nobackup" \
 		--exclude-if-present "CACHEDIR.TAG" \
 		--cache-dir "$RESTIC_CACHE_DIR" \
