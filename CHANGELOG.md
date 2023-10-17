@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.2.2 - 2023-10-17
+#### Bug Fixes
+- Explicitly disable progress bar - (12edc4e) - Billie Thompson
+#### Build system
+- Reduce build context sent to docker - (ebdea13) - Billie Thompson
+#### Continuous Integration
+- **(deps)** bump armakuni/github-actions from 0.16.6 to 0.16.7 - (749b048) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.16.5 to 0.16.6 - (122236b) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.16.4 to 0.16.5 - (2003c0a) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.16.3 to 0.16.4 - (601e7a9) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.16.2 to 0.16.3 - (afa4338) - dependabot[bot]
+- Ue new output format - (8393ac2) - Billie Thompson
+
+- - -
+
 ## v0.2.1 - 2023-10-10
 #### Bug Fixes
 - Fix ordering of matches - (fae38c9) - Billie Thompson
