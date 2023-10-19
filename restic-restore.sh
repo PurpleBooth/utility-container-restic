@@ -45,7 +45,6 @@ function restic_restore() {
 	restore_path="$1"
 	SNAPSHOT="${2:-latest}"
 	rustic restore \
-		--no-progress \
 		--cache-dir "$RESTIC_CACHE_DIR" \
 		--password-file "$RESTIC_PASSWORD_FILE" \
 		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
