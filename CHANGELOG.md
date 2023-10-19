@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.2.3 - 2023-10-19
+#### Bug Fixes
+- Allow the user to configure the progress - (05b9d15) - Billie Thompson
+#### Continuous Integration
+- **(deps)** bump armakuni/github-actions from 0.16.8 to 0.16.9 - (5b6fc85) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.16.7 to 0.16.8 - (88887bc) - dependabot[bot]
+- **(deps)** bump actions/checkout from 4.1.0 to 4.1.1 - (f3d8ff8) - dependabot[bot]
+
+- - -
+
 ## v0.2.2 - 2023-10-17
 #### Bug Fixes
 - Explicitly disable progress bar - (12edc4e) - Billie Thompson
