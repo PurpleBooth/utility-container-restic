@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.4.0 - 2023-10-21
+#### Features
+- Print a dry run before running the real backup - (2725d27) - Billie Thompson
+
+- - -
+
 ## v0.3.0 - 2023-10-21
 #### Features
 - Allow users to set an env to control the restore - (846e475) - Billie Thompson
