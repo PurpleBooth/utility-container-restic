@@ -52,7 +52,7 @@ function restic_restore() {
 		"$SNAPSHOT:$restore_path" \
 		"$restore_path"
 
-	if [ -f "$restore_path/restore-to" ] ; then
+	if [ -f "$restore_path/restore-to" ]; then
 		rm -v "$restore_path/restore-to"
 	fi
 }
@@ -90,7 +90,7 @@ function restore_if_needed() {
 	elif [ -f "$restore_path/restore-to" ] && [ -n "$(cat "$restore_path/restore-to")" ]; then
 		echo "Restore marker found, restoring $(cat "$restore_path/restore-to")"
 		restic_restore "$restore_path" "$(cat "$restore_path/restore-to")"
-	elif [ -n "${RESTORE_TO:-}" ] ; then
+	elif [ -n "${RESTORE_TO:-}" ]; then
 		echo "Restore marker found, restoring $RESTORE_TO"
 		restic_restore "$restore_path" "$RESTORE_TO"
 	else
