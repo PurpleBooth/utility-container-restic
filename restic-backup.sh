@@ -52,6 +52,15 @@ function backup() {
 
 	echo "Backing up"
 	rustic backup \
+		--dry-run \
+		--exclude-if-present ".nobackup" \
+		--exclude-if-present "CACHEDIR.TAG" \
+		--cache-dir "$RESTIC_CACHE_DIR" \
+		--password-file "$RESTIC_PASSWORD_FILE" \
+		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
+		--host "$backup_host" \
+		"$@"
+	rustic backup \
 		--exclude-if-present ".nobackup" \
 		--exclude-if-present "CACHEDIR.TAG" \
 		--cache-dir "$RESTIC_CACHE_DIR" \
