@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.3.0 - 2023-10-21
+#### Features
+- Allow users to set an env to control the restore - (846e475) - Billie Thompson
+#### Refactoring
+- Formatting - (058786f) - Billie Thompson
+
+- - -
+
 ## v0.2.3 - 2023-10-19
 #### Bug Fixes
 - Allow the user to configure the progress - (05b9d15) - Billie Thompson
