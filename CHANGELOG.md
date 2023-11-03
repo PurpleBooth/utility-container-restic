@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.5.0 - 2023-11-03
+#### Bug Fixes
+- Build rustic from source - (5472c34) - Billie Thompson
+- Ensure that we do not ignore cargo files - (cc5b086) - Billie Thompson
+#### Continuous Integration
+- **(deps)** bump armakuni/github-actions from 0.18.1 to 0.18.2 - (1f16633) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.16.9 to 0.18.1 - (6c86a4c) - dependabot[bot]
+- allow watch for cargo bumps - (13bd3cd) - Billie Thompson
+#### Features
+- Allow dependabot to drive the rustic version bumps - (90832f4) - Billie Thompson
+
+- - -
+
 ## v0.4.0 - 2023-10-21
 #### Features
 - Print a dry run before running the real backup - (2725d27) - Billie Thompson
