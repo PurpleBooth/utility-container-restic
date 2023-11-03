@@ -1,7 +1,16 @@
-FROM ubuntu:latest
+FROM ubuntu:latest as base
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
+FROM base as build-rustic-rs
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN cargo install rustic-rs
+
+
+FROM base
 ## Upgrade
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
 
 ## Fix for missing CA
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y dnsutils ca-certificates
@@ -22,11 +31,7 @@ RUN curl -Lo restic.bz2 "https://github.com/restic/restic/releases/latest/downlo
 # This ensures we have the latest version of rustic
 COPY Cargo.lock Cargo.toml /tmp/rustic/
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tar curl bash tar gzip
-RUN curl -Lo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/download/rustic-$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/rustic-rs/rustic/releases/latest | xargs basename)-$(arch)-unknown-linux-gnu.tar.gz" \
-      && tar xvzf rustic.tar.gz \
-      && chmod -v +x rustic \
-      && mv -v rustic /usr/local/bin/ \
-      && rustic --version
+COPY --from=build-rustic-rs /root/.cargo/bin/rustic /usr/local/bin/rustic
 
 ## Helper scripts
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y jq
