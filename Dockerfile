@@ -19,6 +19,8 @@ RUN curl -Lo restic.bz2 "https://github.com/restic/restic/releases/latest/downlo
       && restic version
 
 ## Install rustic
+# This ensures we have the latest version of rustic
+COPY Cargo.lock Cargo.toml /tmp/rustic/
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tar curl bash tar gzip
 RUN curl -Lo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/download/rustic-$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/rustic-rs/rustic/releases/latest | xargs basename)-$(arch)-unknown-linux-gnu.tar.gz" \
       && tar xvzf rustic.tar.gz \
