@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.5.1 - 2023-11-04
+#### Bug Fixes
+- Disable dry run for backups - (9f2ff1a) - Billie Thompson
+
+- - -
+
 ## v0.5.0 - 2023-11-03
 #### Bug Fixes
 - Build rustic from source - (5472c34) - Billie Thompson
