@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.5.2 - 2024-02-23
+#### Bug Fixes
+- Use binaries if availble - (61dafb6) - Billie Thompson
+#### Continuous Integration
+- **(deps)** bump armakuni/github-actions from 0.19.1 to 0.19.2 - (8ba6a1c) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 5.0.0 to 5.1.0 - (5312644) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.19.0 to 0.19.1 - (ff17058) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.18.2 to 0.19.0 - (bdbef02) - dependabot[bot]
+
+- - -
+
 ## v0.5.1 - 2023-11-04
 #### Bug Fixes
 - Disable dry run for backups - (9f2ff1a) - Billie Thompson
