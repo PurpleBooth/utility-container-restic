@@ -5,8 +5,10 @@ FROM base as build-rustic-rs
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN curl -L --proto '=https' --tlsv1.2 -sSf \
+      https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 ENV PATH="/root/.cargo/bin:${PATH}"
-RUN cargo install rustic-rs
+RUN cargo binstall rustic-rs --no-confirm
 
 
 FROM base
