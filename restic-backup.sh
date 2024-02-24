@@ -58,6 +58,7 @@ function backup() {
 		--password-file "$RESTIC_PASSWORD_FILE" \
 		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
 		--host "$backup_host" \
+		--progress-interval "60s" \
 		"$@"
 }
 
