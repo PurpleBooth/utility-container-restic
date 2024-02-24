@@ -6,15 +6,10 @@ FROM base as build-rustic-rs
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential git
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 RUN curl -L --proto '=https' --tlsv1.2 -sSf \
-      https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+      https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash \
+    && cargo binstall --y rustic-rs
 ENV PATH="/root/.cargo/bin:${PATH}"
-<<<<<<< Updated upstream
-RUN cargo binstall rustic-rs --no-confirm
-
-=======
-RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 RUN cargo binstall --y rustic-rs
->>>>>>> Stashed changes
 
 FROM base
 ## Upgrade
