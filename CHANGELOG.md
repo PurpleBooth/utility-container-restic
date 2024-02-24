@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.6.0 - 2024-02-24
+#### Bug Fixes
+- Correct the argument - (8f29ca6) - Billie Thompson
+- Remove stray argument - (3eeec9a) - Billie Thompson
+- Correct mising path for cargo in rustic build container - (e214fa0) - Billie Thompson
+- Clean up a bad merge - (ea234dc) - Billie Thompson
+#### Features
+- Display progress bar - (6e0aae4) - Billie Thompson
+
+- - -
+
 ## v0.5.2 - 2024-02-23
 #### Bug Fixes
 - Use binaries if availble - (61dafb6) - Billie Thompson
