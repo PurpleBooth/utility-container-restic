@@ -4,12 +4,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 FROM base as build-rustic-rs
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential git
+ENV PATH="/root/.cargo/bin:${PATH}"
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 RUN curl -L --proto '=https' --tlsv1.2 -sSf \
       https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash \
-    && cargo binstall --y rustic-rs
-ENV PATH="/root/.cargo/bin:${PATH}"
-RUN cargo binstall --y rustic-rs
+    && cargo binstall --y rustic-rs \
+    && rustic --version
 
 FROM base
 ## Upgrade
