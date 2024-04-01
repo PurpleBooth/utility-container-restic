@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.0 - 2024-04-01
+#### Continuous Integration
+- **(deps)** bump docker/setup-buildx-action from 3.1.0 to 3.2.0 - (830c8ac) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 5.2.0 to 5.3.0 - (ca7ccde) - dependabot[bot]
+- **(deps)** bump docker/login-action from 3.0.0 to 3.1.0 - (c2376a7) - dependabot[bot]
+- **(deps)** bump actions/checkout from 4.1.1 to 4.1.2 - (ca7b76c) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 5.1.0 to 5.2.0 - (f612e90) - dependabot[bot]
+- **(deps)** bump docker/setup-buildx-action from 3.0.0 to 3.1.0 - (0085028) - dependabot[bot]
+- **(deps)** bump armakuni/github-actions from 0.19.2 to 0.19.3 - (e32cf38) - dependabot[bot]
+- Skip cross compiling for tests - (810a125) - Billie Thompson
+#### Features
+- Use estargz and add attestations - (2115b00) - Billie Thompson
+
+- - -
+
 ## v0.6.0 - 2024-02-24
 #### Bug Fixes
 - Correct the argument - (8f29ca6) - Billie Thompson
