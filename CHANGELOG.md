@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.1 - 2024-04-01
+#### Bug Fixes
+- Speed up build by using binaries from rustic's releases page - (3c1c5a7) - Billie Thompson
+
+- - -
+
 ## v0.7.0 - 2024-04-01
 #### Continuous Integration
 - **(deps)** bump docker/setup-buildx-action from 3.1.0 to 3.2.0 - (830c8ac) - dependabot[bot]
