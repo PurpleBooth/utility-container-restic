@@ -85,7 +85,7 @@ function has_some_restores() {
 function restore_if_needed() {
 	restore_path="$1"
 
-	if [ "0" -eq "$(find "$restore_path" -type f | wc -l)" ]; then
+	if [ "0" -eq "$(find "$restore_path" -type f -print -quit | wc -l)" ]; then
 		echo "No data found, looking for a snapshot"
 
 		if has_some_restores "$restore_path"; then
