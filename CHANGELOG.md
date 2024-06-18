@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.2 - 2024-06-18
+#### Bug Fixes
+- Don't take ages on big directories - (17e80ef) - Billie Thompson
+#### Continuous Integration
+- **(deps)** bump docker/build-push-action from 5.4.0 to 6.0.0 - (1f6fa81) - dependabot[bot]
+- **(deps)** bump actions/checkout from 4.1.6 to 4.1.7 - (327940b) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 5.3.0 to 5.4.0 - (c29b8ec) - dependabot[bot]
+- **(deps)** bump docker/login-action from 3.1.0 to 3.2.0 - (9a72a8a) - dependabot[bot]
+- **(deps)** bump actions/checkout from 4.1.5 to 4.1.6 - (fc0f0cf) - dependabot[bot]
+- **(deps)** bump actions/checkout from 4.1.4 to 4.1.5 - (683050c) - dependabot[bot]
+- **(deps)** bump taiki-e/cache-cargo-install-action from 1 to 2 - (44b54fc) - dependabot[bot]
+- **(deps)** bump actions/checkout from 4.1.3 to 4.1.4 - (7587f0a) - dependabot[bot]
+- **(deps)** bump actions/checkout from 4.1.2 to 4.1.3 - (e88d08e) - dependabot[bot]
+- **(deps)** bump docker/setup-buildx-action from 3.2.0 to 3.3.0 - (32aaee7) - dependabot[bot]
+
+- - -
+
 ## v0.7.1 - 2024-04-01
 #### Bug Fixes
 - Speed up build by using binaries from rustic's releases page - (3c1c5a7) - Billie Thompson
