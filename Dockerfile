@@ -1,4 +1,4 @@
-FROM ubuntu:latest as base
+FROM ubuntu:latest@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 as base
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
 FROM base as build-rustic-rs
