@@ -41,7 +41,7 @@ jobs:
         env:
           REPOSITORY: ${{ github.repository }}
       - name: Test build
-        uses: docker/build-push-action@v6.5.0
+        uses: docker/build-push-action@v6.6.1
         with:
           context: .
           push: false
@@ -144,7 +144,7 @@ jobs:
         env:
           REPOSITORY: ${{ github.repository }}
       - name: Deploy build
-        uses: docker/build-push-action@v6.5.0
+        uses: docker/build-push-action@v6.6.1
         with:
           context: .
           push: true
