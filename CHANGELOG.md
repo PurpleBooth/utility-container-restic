@@ -2,6 +2,35 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.3 - 2024-08-18
+#### Bug Fixes
+- **(deps)** update rust crate rustic-rs to 0.7.0 - (aece5d2) - renovate[bot]
+#### Continuous Integration
+- **(deps)** bump taiki-e/install-action from 2.42.22 to 2.42.23 - (f7b8459) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.5.0 to 6.6.1 - (68f421f) - dependabot[bot]
+- **(deps)** bump docker/setup-buildx-action from 3.5.0 to 3.6.1 - (f7db1c4) - dependabot[bot]
+- **(deps)** bump docker/setup-buildx-action from 3.4.0 to 3.5.0 - (ab4c6e0) - dependabot[bot]
+- **(deps)** bump docker/login-action from 3.2.0 to 3.3.0 - (2ab60a0) - dependabot[bot]
+- **(deps)** bump docker/setup-qemu-action from 3.1.0 to 3.2.0 - (8ed888d) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.4.1 to 6.5.0 - (6f315a1) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.4.0 to 6.4.1 - (93760a8) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.3.0 to 6.4.0 - (2d6cc48) - dependabot[bot]
+- **(deps)** bump docker/setup-buildx-action from 3.3.0 to 3.4.0 - (c3426b7) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.2.0 to 6.3.0 - (4debb1a) - dependabot[bot]
+- **(deps)** bump docker/setup-qemu-action from 3.0.0 to 3.1.0 - (cb22d3f) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.1.0 to 6.2.0 - (d4100b0) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.0.2 to 6.1.0 - (ef0eb4f) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.0.1 to 6.0.2 - (16ca7e7) - dependabot[bot]
+- **(deps)** bump docker/build-push-action from 6.0.0 to 6.0.1 - (4346f9f) - dependabot[bot]
+- Add renovate.json (#56) - (c9a1a10) - renovate[bot]
+#### Miscellaneous Chores
+- **(deps)** update taiki-e/install-action digest to 2d7ff60 - (58d7e34) - renovate[bot]
+- **(deps)** update docker/build-push-action action to v6.7.0 - (e806dbb) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to 4f13fb6 - (64c32c8) - renovate[bot]
+- **(deps)** pin dependencies - (2440268) - renovate[bot]
+
+- - -
+
 ## v0.7.2 - 2024-06-18
 #### Bug Fixes
 - Don't take ages on big directories - (17e80ef) - Billie Thompson
