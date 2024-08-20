@@ -12,11 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Install Shfmt
-        uses: taiki-e/install-action@0593da407881e996340c22f60617ba9d95f2b995 # v2
+        uses: taiki-e/install-action@e96513f64c39eb6ebc73e13b6e8470317202483a # v2
         with:
           tool: shfmt
       - name: Install ShellCheck
-        uses: taiki-e/install-action@0593da407881e996340c22f60617ba9d95f2b995 # v2
+        uses: taiki-e/install-action@e96513f64c39eb6ebc73e13b6e8470317202483a # v2
         with:
           tool: shellcheck
       - name: Run Shfmt
