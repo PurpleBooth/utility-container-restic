@@ -3,6 +3,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
 FROM base AS build-rustic-rs
 
+# renovate: datasource=rust depName=rustic-rs
 ENV RUSTIC_RS_VERSION=0.8.0
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential git
 RUN curl -Lvo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/download/rustic-v$RUSTIC_RS_VERSION-$(arch)-unknown-linux-gnu.tar.gz" \
