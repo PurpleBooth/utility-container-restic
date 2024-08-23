@@ -3,8 +3,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
 FROM base AS build-rustic-rs
 
+ENV RUSTIC_RS_VERSION=0.8.0
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential git
-RUN curl -Lvo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/download/rustic-$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/rustic-rs/rustic/releases/latest | xargs basename )-$(arch)-unknown-linux-gnu.tar.gz" \
+RUN curl -Lvo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/download/rustic-v$RUSTIC_RS_VERSION-$(arch)-unknown-linux-gnu.tar.gz" \
       && tar -C /usr/local/bin/ -xzvf rustic.tar.gz \
       && rustic --version \
       && rm -v rustic.tar.gz

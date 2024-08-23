@@ -2,5 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>PurpleBooth/renovate-config"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": ["ENV RUSTIC_RS_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "rustic-rs",
+      "datasourceTemplate": "rust"
+    }
   ]
 }
