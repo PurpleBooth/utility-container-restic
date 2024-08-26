@@ -2,6 +2,38 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.4 - 2024-08-26
+#### Bug Fixes
+- Use common pipelines and sign images - (ba5b815) - Billie Thompson
+#### Build system
+- Remove cargo copy from docker file - (c8948e6) - Billie Thompson
+- Correct data source - (c5703fe) - Billie Thompson
+#### Continuous Integration
+- add missing permissions - (50d9456) - Billie Thompson
+- Add missing permissions - (51fe469) - Billie Thompson
+- Attempt another renovate method - (3f8e470) - Billie Thompson
+- Update rustic-rs using renovate - (55707b7) - Billie Thompson
+- Correct push to only happen on version bump - (5357ab6) - Billie Thompson
+- Delete unused dependabot file - (4933938) - Billie Thompson
+- Remove unused mergify file - (716fdec) - Billie Thompson
+#### Miscellaneous Chores
+- **(deps)** update taiki-e/install-action digest to f172798 - (8dc3d40) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to 4a27a04 - (8486e29) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to dea01ef - (e640be6) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to 2a0c34a - (37e6a2b) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to c284405 - (656ec9e) - renovate[bot]
+- **(deps)** update taiki-e/cache-cargo-install-action action to v2.0.1 - (c0ac39f) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to e96513f - (58c8572) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to 0593da4 - (81573f1) - renovate[bot]
+- **(deps)** update taiki-e/install-action digest to 37129d5 - (5fc0ead) - renovate[bot]
+- **(deps)** update ubuntu:latest docker digest to 8a37d68 - (676cfa6) - renovate[bot]
+- Manager is now in common - (a0c2b80) - Billie Thompson
+- Remove unused cargo files - (0eb609e) - Billie Thompson
+- Attempt a different datasource - (c386a24) - Billie Thompson
+- Fix linting - (3e242c4) - Billie Thompson
+
+- - -
+
 ## v0.7.3 - 2024-08-18
 #### Bug Fixes
 - **(deps)** update rust crate rustic-rs to 0.7.0 - (aece5d2) - renovate[bot]
