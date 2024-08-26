@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.6 - 2024-08-26
+#### Bug Fixes
+- Version bump - (a28f7a3) - Billie Thompson
+
+- - -
+
 ## v0.7.5 - 2024-08-26
 #### Bug Fixes
 - Version bump - (8ac4d07) - Billie Thompson
