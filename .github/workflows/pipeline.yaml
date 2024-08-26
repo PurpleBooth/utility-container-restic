@@ -75,6 +75,7 @@ jobs:
       attestations: write
       packages: write
       id-token: write
+      contents: read
     if: needs.release.outputs.current_version != needs.release.outputs.previous_version
     needs:
       - release
