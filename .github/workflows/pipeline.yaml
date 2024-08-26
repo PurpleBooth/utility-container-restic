@@ -71,6 +71,10 @@ jobs:
 
 
   docker-push:
+    permissions:
+      attestations: write
+      packages: write
+      id-token: write
     if: needs.release.outputs.current_version != needs.release.outputs.previous_version
     needs:
       - release
