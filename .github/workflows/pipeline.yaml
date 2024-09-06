@@ -13,10 +13,10 @@ jobs:
     uses: PurpleBooth/common-pipelines/.github/workflows/docker-build.yml@main
 
   check-conventional-commits:
-    uses: armakuni/github-actions/.github/workflows/check-conventional-commits.yml@cee3c433194a2e9ba4566d3423e4454f36fb97d0 # v0.19.3
+    uses: armakuni/github-actions/.github/workflows/check-conventional-commits.yml@a5fb943d5c31fcfaa03d562362224551d3e25acb # v0.19.4
 
   lint-pipeline:
-    uses: armakuni/github-actions/.github/workflows/lint-pipeline.yml@cee3c433194a2e9ba4566d3423e4454f36fb97d0 # v0.19.3
+    uses: armakuni/github-actions/.github/workflows/lint-pipeline.yml@a5fb943d5c31fcfaa03d562362224551d3e25acb # v0.19.4
 
 
   all-tests-succeeded:
@@ -49,7 +49,7 @@ jobs:
       - uses: taiki-e/cache-cargo-install-action@caa6f48d18d42462f9c30df89e2b4f71a42b7c2c # v2.0.1
         with:
           tool: cargo-edit
-      - uses: armakuni/github-actions/setup-cocogitto@cee3c433194a2e9ba4566d3423e4454f36fb97d0 # v0.19.3
+      - uses: armakuni/github-actions/setup-cocogitto@a5fb943d5c31fcfaa03d562362224551d3e25acb # v0.19.4
       - id: previous_version
         run: |
           cog get-version | tee .version
