@@ -4,7 +4,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 FROM base AS build-rustic-rs
 
 # renovate: datasource=github-releases depName=rustic-rs/rustic extractVersion=^v(?<version>.*)$
-ENV RUSTIC_RS_VERSION=0.8.0
+ENV RUSTIC_RS_VERSION=0.8.1
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential git
 RUN curl -Lvo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/latest/download/rustic-v$RUSTIC_RS_VERSION-$(arch)-unknown-linux-gnu.tar.gz" \
       && tar -C /usr/local/bin/ -xzvf rustic.tar.gz \
