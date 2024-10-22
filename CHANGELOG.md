@@ -2,6 +2,25 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.7 - 2024-10-22
+#### Bug Fixes
+- Bump assorted versions - (80f9600) - Billie Thompson
+#### Miscellaneous Chores
+- **(deps)** update ubuntu:latest docker digest to 99c3519 - (76d1021) - renovate[bot]
+- **(deps)** update ubuntu:latest docker digest to d4f6f70 - (7d51717) - renovate[bot]
+- **(deps)** update ubuntu:latest docker digest to ab64a83 - (f4694c0) - renovate[bot]
+- **(deps)** update ubuntu:latest docker digest to ee6860a - (bd8e1d9) - renovate[bot]
+- **(deps)** update dependency rustic-rs/rustic to v0.9.3 - (3c0a236) - renovate[bot]
+- **(deps)** update dependency rustic-rs/rustic to v0.9.2 - (691efe5) - renovate[bot]
+- **(deps)** update dependency rustic-rs/rustic to v0.9.1 - (a66a9d5) - renovate[bot]
+- **(deps)** update ubuntu:latest docker digest to b359f10 - (da1c70e) - renovate[bot]
+- **(deps)** update dependency rustic-rs/rustic to v0.9.0 - (aecd730) - renovate[bot]
+- **(deps)** update ubuntu:latest docker digest to dfc1087 - (a26fef0) - renovate[bot]
+- **(deps)** update dependency rustic-rs/rustic to v0.8.1 - (e8be84c) - renovate[bot]
+- **(deps)** update armakuni/github-actions action to v0.19.4 - (78f7997) - renovate[bot]
+
+- - -
+
 ## v0.7.6 - 2024-08-26
 #### Bug Fixes
 - Version bump - (a28f7a3) - Billie Thompson
