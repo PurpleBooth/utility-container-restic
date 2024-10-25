@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.8 - 2024-10-25
+#### Bug Fixes
+- **(deps)** update dependency rustic-rs/rustic to v0.9.4 - (f585b59) - renovate[bot]
+#### Continuous Integration
+- Ensure container rebuilds are triggered - (7148e70) - Billie Thompson
+
+- - -
+
 ## v0.7.7 - 2024-10-22
 #### Bug Fixes
 - Bump assorted versions - (80f9600) - Billie Thompson
