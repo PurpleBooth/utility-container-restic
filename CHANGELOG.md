@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.9 - 2024-11-16
+#### Bug Fixes
+- **(deps)** update ubuntu:latest docker digest to 278628f - (29ca5c3) - renovate[bot]
+
+- - -
+
 ## v0.7.8 - 2024-10-25
 #### Bug Fixes
 - **(deps)** update dependency rustic-rs/rustic to v0.9.4 - (f585b59) - renovate[bot]
