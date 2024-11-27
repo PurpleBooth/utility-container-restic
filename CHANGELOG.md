@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.0 - 2024-11-27
+#### Features
+- show what directory is being restored - (f71d2c2) - Billie Thompson
+
+- - -
+
 ## v0.7.9 - 2024-11-16
 #### Bug Fixes
 - **(deps)** update ubuntu:latest docker digest to 278628f - (29ca5c3) - renovate[bot]
