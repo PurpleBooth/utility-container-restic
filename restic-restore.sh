@@ -86,7 +86,7 @@ function restore_if_needed() {
 	restore_path="$1"
 
 	if [ "0" -eq "$(find "$restore_path" -type f -print -quit | wc -l)" ]; then
-		echo "No data found, looking for a snapshot"
+		echo "No data found in \"$restore_path\", looking for a snapshot"
 
 		if has_some_restores "$restore_path"; then
 			echo "Snapshots found, restoring..."
@@ -96,13 +96,13 @@ function restore_if_needed() {
 			echo "Hallo, welt!"
 		fi
 	elif [ -f "$restore_path/restore-to" ] && [ -n "$(cat "$restore_path/restore-to")" ]; then
-		echo "Restore marker found, restoring $(cat "$restore_path/restore-to")"
+		echo "Restore marker found in \"$restore_path\", restoring $(cat "$restore_path/restore-to")"
 		restic_restore "$restore_path" "$(cat "$restore_path/restore-to")"
 	elif [ -n "${RESTORE_TO:-}" ]; then
-		echo "Restore marker found, restoring $RESTORE_TO"
+		echo "Restore marker found in \"$restore_path\", restoring $RESTORE_TO"
 		restic_restore "$restore_path" "$RESTORE_TO"
 	else
-		echo "Not running a restore"
+		echo "Not running a restore for \"$restore_path\""
 	fi
 }
 
