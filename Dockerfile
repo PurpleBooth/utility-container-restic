@@ -1,6 +1,8 @@
 FROM ubuntu:latest@sha256:80dd3c3b9c6cecb9f1667e9290b3bc61b78c2678c02cbdae5f0fea92cc6734ab AS base
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
+# Rustic Dependencies
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfuse2
 FROM base AS build-rustic-rs
 
 # renovate: datasource=github-releases depName=rustic-rs/rustic extractVersion=^v(?<version>.*)$
