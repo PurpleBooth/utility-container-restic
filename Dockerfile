@@ -1,10 +1,15 @@
 FROM ubuntu:latest@sha256:80dd3c3b9c6cecb9f1667e9290b3bc61b78c2678c02cbdae5f0fea92cc6734ab AS base
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-    && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y
+    && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y \
+    && rm -vrf /var/lib/apt/lists/*
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfuse2
+# Rustic runtime dependencies
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libfuse2 \
+    && rm -vrf /var/lib/apt/lists/*
+
 FROM base AS build-rustic-rs
-
+RUN DEBIAN_FRONTEND=noninteractive apt-get update
 # renovate: datasource=github-releases depName=rustic-rs/rustic extractVersion=^v(?<version>.*)$
 ENV RUSTIC_RS_VERSION=0.9.5
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl bash build-essential git
@@ -17,14 +22,20 @@ FROM base
 ## Upgrade
 
 ## Fix for missing CA
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y dnsutils ca-certificates
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y dnsutils ca-certificates \
+    && rm -vrf /var/lib/apt/lists/*
 
 ## Install rclone
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl p7zip-full bash
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y curl p7zip-full bash \
+    && rm -vrf /var/lib/apt/lists/*
 RUN curl https://rclone.org/install.sh | bash && rclone --version
 
 ## Install restic
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bzip2 curl bash
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y bzip2 curl bash \
+    && rm -vrf /var/lib/apt/lists/*
 RUN curl -Lo restic.bz2 "https://github.com/restic/restic/releases/latest/download/restic_$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/restic/restic/releases/latest | xargs basename | cut -d'v' -f2)_linux_"$(arch | sed s/aarch64/arm64/ | sed s/x86_64/amd64/)".bz2" \
     && bzip2 -d restic.bz2 \
     && chmod -v +x restic \
@@ -33,11 +44,12 @@ RUN curl -Lo restic.bz2 "https://github.com/restic/restic/releases/latest/downlo
 
 ## Install rustic
 # This ensures we have the latest version of rustic
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tar curl bash tar gzip
 COPY --from=build-rustic-rs /usr/local/bin/rustic /usr/local/bin/rustic
 
 ## Helper scripts
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y jq
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y jq \
+    && rm -vrf /var/lib/apt/lists/*
 COPY restic-backup.sh /usr/local/bin/restic-backup
 COPY restic-restore.sh /usr/local/bin/restic-restore
 RUN chmod -v +x /usr/local/bin/restic-backup /usr/local/bin/restic-restore
