@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.1 - 2024-12-08
+#### Bug Fixes
+- **(deps)** update ubuntu:latest docker digest to 80dd3c3 - (5e39886) - renovate[bot]
+- Do not keep ubuntu apt listings in image - (1e44821) - Billie Thompson
+- correct download url for rustic - (bb7e31e) - Billie Thompson
+
+- - -
+
 ## v0.8.0 - 2024-11-27
 #### Features
 - show what directory is being restored - (f71d2c2) - Billie Thompson
