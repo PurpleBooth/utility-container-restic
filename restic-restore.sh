@@ -45,14 +45,6 @@ function restic_restore() {
 	restore_path="$1"
 	SNAPSHOT="${2:-latest}"
 	rustic restore \
-		--dry-run \
-		--cache-dir "$RESTIC_CACHE_DIR" \
-		--password-file "$RESTIC_PASSWORD_FILE" \
-		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
-		--filter-host "$RESTIC_HOST" \
-		"$SNAPSHOT:$restore_path" \
-		"$restore_path"
-	rustic restore \
 		--cache-dir "$RESTIC_CACHE_DIR" \
 		--password-file "$RESTIC_PASSWORD_FILE" \
 		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
