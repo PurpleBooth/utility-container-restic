@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.2 - 2024-12-26
+#### Bug Fixes
+- dry run is slow - (7c8ec43) - Billie Thompson
+
+- - -
+
 ## v0.8.1 - 2024-12-08
 #### Bug Fixes
 - **(deps)** update ubuntu:latest docker digest to 80dd3c3 - (5e39886) - renovate[bot]
