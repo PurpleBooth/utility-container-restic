@@ -22,7 +22,8 @@ FROM base
 ## Add missing lsb_release command
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y lsb-release \
-    && rm -vrf /var/lib/apt/lists/*
+    && rm -vrf /var/lib/apt/lists/* \
+    && lsb_release
 
 ## Fix for missing CA
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
