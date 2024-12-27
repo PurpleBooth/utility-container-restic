@@ -19,7 +19,10 @@ RUN curl -Lvo rustic.tar.gz "https://github.com/rustic-rs/rustic/releases/downlo
     && rm -v rustic.tar.gz
 
 FROM base
-## Upgrade
+## Add missing lsb_release command
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y lsb-release \
+    && rm -vrf /var/lib/apt/lists/*
 
 ## Fix for missing CA
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
