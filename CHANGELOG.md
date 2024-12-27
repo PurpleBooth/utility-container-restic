@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.3 - 2024-12-27
+#### Bug Fixes
+- check lsb_release works - (cd8cfbe) - Billie Thompson
+- add missing lsb_release dependency - (92e9804) - Billie Thompson
+
+- - -
+
 ## v0.8.2 - 2024-12-26
 #### Bug Fixes
 - dry run is slow - (7c8ec43) - Billie Thompson
