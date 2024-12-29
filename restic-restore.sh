@@ -44,13 +44,21 @@ done
 function restic_restore() {
 	restore_path="$1"
 	SNAPSHOT="${2:-latest}"
-	rustic restore \
+	if ! rustic restore \
 		--cache-dir "$RESTIC_CACHE_DIR" \
 		--password-file "$RESTIC_PASSWORD_FILE" \
 		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
 		--filter-host "$RESTIC_HOST" \
 		"$SNAPSHOT:$restore_path" \
-		"$restore_path"
+		"$restore_path"; then
+		exit_code=$?
+		for file in /tmp/report-*.toml; do
+			echo "--- Report ---"
+			cat "$file"
+			echo "--- End Report ---"
+		done
+		exit "$exit_code"
+	fi
 
 	if [ -f "$restore_path/restore-to" ]; then
 		rm -v "$restore_path/restore-to"
