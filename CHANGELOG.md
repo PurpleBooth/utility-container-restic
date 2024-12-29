@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.9.0 - 2024-12-29
+#### Features
+- display the error report on crash for a restore - (62ed54e) - Billie Thompson
+
+- - -
+
 ## v0.8.3 - 2024-12-27
 #### Bug Fixes
 - check lsb_release works - (cd8cfbe) - Billie Thompson
