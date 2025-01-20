@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.9.1 - 2025-01-20
+#### Bug Fixes
+- **(deps)** update armakuni/github-actions action to v0.19.5 (#65) - (68e3302) - renovate[bot]
+
+- - -
+
 ## v0.9.0 - 2024-12-29
 #### Features
 - display the error report on crash for a restore - (62ed54e) - Billie Thompson
