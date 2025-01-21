@@ -35,6 +35,10 @@ while [[ $# -gt 0 ]]; do
 		shift # past argument
 		shift # past value
 		;;
+	-i | --ignore-failures)
+		ignore_failures=true
+		shift # past argument
+		;;
 	--* | -*)
 		echo "Unknown option $1"
 		exit 1
@@ -64,9 +68,17 @@ function backup() {
 
 if [ -n "${sleep_for:-}" ]; then
 	while true; do
-		backup "$RESTIC_HOST" "${backup_dirs[@]}"
+		if [ "${ignore_failures:-false}" = true ]; then
+			backup "$RESTIC_HOST" "${backup_dirs[@]}" || true
+		else
+			backup "$RESTIC_HOST" "${backup_dirs[@]}"
+		fi
 		sleep "$sleep_for"
 	done
 else
-	backup "$RESTIC_HOST" "${backup_dirs[@]}"
+	if [ "${ignore_failures:-false}" = true ]; then
+		backup "$RESTIC_HOST" "${backup_dirs[@]}" || true
+	else
+		backup "$RESTIC_HOST" "${backup_dirs[@]}"
+	fi
 fi
