@@ -46,7 +46,7 @@ jobs:
           fetch-depth: 0
       - name: Get tags
         run: git fetch --tags origin
-      - uses: taiki-e/cache-cargo-install-action@caa6f48d18d42462f9c30df89e2b4f71a42b7c2c # v2.0.1
+      - uses: taiki-e/cache-cargo-install-action@44857e0ff6d186da8fe49f9ac9eedae5bbc37a93 # v2.1.0
         with:
           tool: cargo-edit
       - uses: armakuni/github-actions/setup-cocogitto@c58de42e30374346839a84ee9a58d42e0ea29473 # v0.19.5
