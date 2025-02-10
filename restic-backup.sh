@@ -39,6 +39,11 @@ while [[ $# -gt 0 ]]; do
 		ignore_failures=true
 		shift # past argument
 		;;
+	-d | --delay)
+		delay="$2"
+		shift # past argument
+		shift # past value
+		;;
 	--* | -*)
 		echo "Unknown option $1"
 		exit 1
@@ -49,6 +54,11 @@ while [[ $# -gt 0 ]]; do
 		;;
 	esac
 done
+
+if [ "${delay:-none}" != "none" ]; then
+	echo Waiting before starting backup...
+	sleep "$delay"
+fi
 
 function backup() {
 	backup_host="$1"
