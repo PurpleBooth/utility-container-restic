@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.11.0 - 2025-02-10
+#### Features
+- add ability to delay start of backup scripts - (eff597d) - Billie Thompson
+
+- - -
+
 ## v0.10.2 - 2025-02-10
 #### Bug Fixes
 - **(deps)** update ubuntu:latest docker digest to 7229784 (#67) - (e4e1499) - renovate[bot]
