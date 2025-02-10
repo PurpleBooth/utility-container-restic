@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.10.2 - 2025-02-10
+#### Bug Fixes
+- **(deps)** update ubuntu:latest docker digest to 7229784 (#67) - (e4e1499) - renovate[bot]
+
+- - -
+
 ## v0.10.1 - 2025-01-27
 #### Bug Fixes
 - **(deps)** update taiki-e/cache-cargo-install-action action to v2.1.0 (#66) - (d525017) - renovate[bot]
