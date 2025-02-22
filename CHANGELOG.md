@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.11.1 - 2025-02-22
+#### Bug Fixes
+- Update user/group IDs to 1568 and add HEALTHCHECK NONE - (469cf20) - Billie Thompson
+
+- - -
+
 ## v0.11.0 - 2025-02-10
 #### Features
 - add ability to delay start of backup scripts - (eff597d) - Billie Thompson
