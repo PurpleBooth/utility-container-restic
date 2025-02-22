@@ -58,6 +58,8 @@ COPY restic-backup.sh /usr/local/bin/restic-backup
 COPY restic-restore.sh /usr/local/bin/restic-restore
 RUN chmod -v +x /usr/local/bin/restic-backup /usr/local/bin/restic-restore
 
-RUN groupadd -g 568 nonroot
-RUN useradd -u 568 -g 568 nonroot
+RUN groupadd -g 1568 nonroot
+RUN useradd -u 1568 -g 1568 nonroot
 USER nonroot
+
+HEALTHCHECK NONE

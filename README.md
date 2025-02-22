@@ -11,8 +11,8 @@ In you init containers
               image: ghcr.io/purplebooth/utility-container-restic:latest
               imagePullPolicy: Always
               securityContext:
-                runAsUser: 568
-                runAsGroup: 568
+                runAsUser: 1568
+                runAsGroup: 1568
               volumeMounts:
                 - mountPath: /restic-secret
                   name: restic-secret
@@ -45,8 +45,8 @@ For a cronjob put this after the restore in the init, for a deployment put this 
             image: ghcr.io/purplebooth/utility-container-restic:latest
             imagePullPolicy: Always
             securityContext:
-              runAsUser: 568
-              runAsGroup: 568
+              runAsUser: 1568
+              runAsGroup: 1568
             volumeMounts:
               - mountPath: /restic-secret
                 name: restic-secret
