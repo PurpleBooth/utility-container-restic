@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.11.2 - 2025-02-24
+#### Bug Fixes
+- **(deps)** update taiki-e/cache-cargo-install-action action to v2.1.1 (#68) - (bfe416d) - renovate[bot]
+
+- - -
+
 ## v0.11.1 - 2025-02-22
 #### Bug Fixes
 - Update user/group IDs to 1568 and add HEALTHCHECK NONE - (469cf20) - Billie Thompson
