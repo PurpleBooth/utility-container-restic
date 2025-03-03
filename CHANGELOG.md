@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.11.3 - 2025-03-03
+#### Bug Fixes
+- **(deps)** update armakuni/github-actions action to v0.19.6 (#69) - (1479690) - renovate[bot]
+
+- - -
+
 ## v0.11.2 - 2025-02-24
 #### Bug Fixes
 - **(deps)** update taiki-e/cache-cargo-install-action action to v2.1.1 (#68) - (bfe416d) - renovate[bot]
