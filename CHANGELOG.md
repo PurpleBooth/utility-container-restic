@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.12.0 - 2025-03-15
+#### Features
+- skip scanning and output long - (cda3222) - Billie Thompson
+#### Style
+- **(script)** fix indentation in restic-backup.sh - (011f1de) - Billie Thompson
+
+- - -
+
 ## v0.11.3 - 2025-03-03
 #### Bug Fixes
 - **(deps)** update armakuni/github-actions action to v0.19.6 (#69) - (1479690) - renovate[bot]
