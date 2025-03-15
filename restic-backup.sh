@@ -71,9 +71,9 @@ function backup() {
 		--cache-dir "$RESTIC_CACHE_DIR" \
 		--password-file "$RESTIC_PASSWORD_FILE" \
 		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
-                --no-progress \
+		--no-progress \
 		--long \
-  		--no-scan \
+		--no-scan \
 		--host "$backup_host" \
 		"$@"
 }
