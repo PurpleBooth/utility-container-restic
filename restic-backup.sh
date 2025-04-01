@@ -65,25 +65,45 @@ function backup() {
 	shift
 
 	echo "Backing up"
-	rustic backup \
-		--exclude-if-present ".nobackup" \
-		--exclude-if-present "CACHEDIR.TAG" \
-		--cache-dir "$RESTIC_CACHE_DIR" \
-		--password-file "$RESTIC_PASSWORD_FILE" \
-		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
-		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" \
-		--no-progress \
-		--long \
-		--no-scan \
-		--host "$backup_host" \
-		"$@"
+	if [ -f "$RESTIC_REPOSITORY_FILE" ]; then
+		rustic backup \
+			--exclude-if-present ".nobackup" \
+			--exclude-if-present "CACHEDIR.TAG" \
+			--cache-dir "$RESTIC_CACHE_DIR" \
+			--password-file "$RESTIC_PASSWORD_FILE" \
+			--repository \
+			"$RESTIC_REPOSITORY_FILE" \
+			--no-progress \
+			--long \
+			--no-scan \
+			--host "$backup_host" \
+			"$@"
+	else
+		rustic backup \
+			--exclude-if-present ".nobackup" \
+			--exclude-if-present "CACHEDIR.TAG" \
+			--cache-dir "$RESTIC_CACHE_DIR" \
+			--password-file "$RESTIC_PASSWORD_FILE" \
+			--no-progress \
+			--long \
+			--no-scan \
+			--host "$backup_host" \
+			"$@"
+	fi
+
 }
 
-rustic init \
-	--cache-dir "$RESTIC_CACHE_DIR" \
-	--password-file "$RESTIC_PASSWORD_FILE" \
-	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
-	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" || true
+if [ -f "$RESTIC_REPOSITORY_FILE" ]; then
+	rustic init \
+		--cache-dir "$RESTIC_CACHE_DIR" \
+		--password-file "$RESTIC_PASSWORD_FILE" \
+		--repository \
+		"$(cat "$RESTIC_REPOSITORY_FILE")" || true
+else
+	rustic init \
+		--cache-dir "$RESTIC_CACHE_DIR" \
+		--password-file "$RESTIC_PASSWORD_FILE" || true
+fi
 
 if [ -n "${sleep_for:-}" ]; then
 	while true; do
