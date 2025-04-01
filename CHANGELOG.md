@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.12.2 - 2025-04-01
+#### Bug Fixes
+- do not include empty parameters - (5ef1b1d) - Billie Thompson
+
+- - -
+
 ## v0.12.1 - 2025-04-01
 #### Bug Fixes
 - ensure the repository is initlialised - (271327b) - Billie Thompson
