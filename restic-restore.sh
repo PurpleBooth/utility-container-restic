@@ -47,7 +47,8 @@ function restic_restore() {
 	if ! rustic restore \
 		--cache-dir "$RESTIC_CACHE_DIR" \
 		--password-file "$RESTIC_PASSWORD_FILE" \
-		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
+		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
+		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" \
 		--filter-host "$RESTIC_HOST" \
 		"$SNAPSHOT:$restore_path" \
 		"$restore_path"; then
@@ -105,6 +106,12 @@ function restore_if_needed() {
 		echo "Not running a restore for \"$restore_path\""
 	fi
 }
+
+rustic init \
+	--cache-dir "$RESTIC_CACHE_DIR" \
+	--password-file "$RESTIC_PASSWORD_FILE" \
+	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
+	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" || true
 
 for restore_dir in "${restore_dirs[@]}"; do
 	restore_if_needed "$restore_dir"

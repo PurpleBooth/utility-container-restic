@@ -70,13 +70,20 @@ function backup() {
 		--exclude-if-present "CACHEDIR.TAG" \
 		--cache-dir "$RESTIC_CACHE_DIR" \
 		--password-file "$RESTIC_PASSWORD_FILE" \
-		--repository "$(cat "$RESTIC_REPOSITORY_FILE")" \
+		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
+		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" \
 		--no-progress \
 		--long \
 		--no-scan \
 		--host "$backup_host" \
 		"$@"
 }
+
+rustic init \
+	--cache-dir "$RESTIC_CACHE_DIR" \
+	--password-file "$RESTIC_PASSWORD_FILE" \
+	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
+	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" || true
 
 if [ -n "${sleep_for:-}" ]; then
 	while true; do
