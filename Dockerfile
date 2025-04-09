@@ -1,4 +1,4 @@
-FROM ubuntu:latest@sha256:45243615f4992816784f678ce6c31b34bd07ba09279f740d8d014a9b855c531d AS base
+FROM ubuntu:latest@sha256:1e622c5f073b4f6bfad6632f2616c7f59ef256e96fe78bf6a595d1dc4376ac02 AS base
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && DEBIAN_FRONTEND=noninteractive  apt-get upgrade -y \
     && rm -vrf /var/lib/apt/lists/*
