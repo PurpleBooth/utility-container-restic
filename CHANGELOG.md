@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.12.3 - 2025-04-09
+#### Bug Fixes
+- **(deps)** update ubuntu:latest docker digest to 4524361 - (6bf3a06) - renovate[bot]
+- do not include empty parameters - (2ed4788) - Billie Thompson
+- ensure the repository is initlialised - (0bbd7f1) - Billie Thompson
+#### Miscellaneous Chores
+- **(version)** v0.12.2 - (9276df8) - cog-bot
+- **(version)** v0.12.1 - (714485a) - cog-bot
+
+- - -
+
 ## v0.12.2 - 2025-04-01
 #### Bug Fixes
 - do not include empty parameters - (5ef1b1d) - Billie Thompson
