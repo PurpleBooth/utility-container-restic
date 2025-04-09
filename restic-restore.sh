@@ -107,12 +107,6 @@ function restore_if_needed() {
 	fi
 }
 
-rustic init \
-	--cache-dir "$RESTIC_CACHE_DIR" \
-	--password-file "$RESTIC_PASSWORD_FILE" \
-	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
-	"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" || true
-
 for restore_dir in "${restore_dirs[@]}"; do
 	restore_if_needed "$restore_dir"
 done

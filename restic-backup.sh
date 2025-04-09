@@ -93,18 +93,6 @@ function backup() {
 
 }
 
-if [ -f "$RESTIC_REPOSITORY_FILE" ]; then
-	rustic init \
-		--cache-dir "$RESTIC_CACHE_DIR" \
-		--password-file "$RESTIC_PASSWORD_FILE" \
-		--repository \
-		"$(cat "$RESTIC_REPOSITORY_FILE")" || true
-else
-	rustic init \
-		--cache-dir "$RESTIC_CACHE_DIR" \
-		--password-file "$RESTIC_PASSWORD_FILE" || true
-fi
-
 if [ -n "${sleep_for:-}" ]; then
 	while true; do
 		if [ "${ignore_failures:-false}" = true ]; then
