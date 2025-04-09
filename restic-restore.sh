@@ -53,11 +53,13 @@ function restic_restore() {
 		"$SNAPSHOT:$restore_path" \
 		"$restore_path"; then
 		exit_code=$?
-		for file in /tmp/report-*.toml; do
-			echo "--- Report ---"
-			cat "$file"
-			echo "--- End Report ---"
-		done
+		if compgen -G "/tmp/report-*.*" >/dev/null; then
+			for file in /tmp/report-*.*; do
+				echo "--- Report ---"
+				cat "$file"
+				echo "--- End Report ---"
+			done
+		fi
 		exit "$exit_code"
 	fi
 
