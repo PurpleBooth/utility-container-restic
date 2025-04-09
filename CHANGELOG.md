@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.13.0 - 2025-04-09
+#### Features
+- **(scripts)** add debug mode support with DEBUG environment variable - (67cfce7) - Billie Thompson
+
+- - -
+
 ## v0.12.5 - 2025-04-09
 #### Bug Fixes
 - handle case when report doesn't exist - (21c7eba) - Billie Thompson
