@@ -48,14 +48,14 @@ done
 function restic_restore() {
 	restore_path="$1"
 	SNAPSHOT="${2:-latest}"
-	if ! rustic restore \
-		--cache-dir "$RESTIC_CACHE_DIR" \
-		--password-file "$RESTIC_PASSWORD_FILE" \
-		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && echo "--repository")" \
-		"$([ -f "$RESTIC_REPOSITORY_FILE" ] && cat "$RESTIC_REPOSITORY_FILE")" \
-		--filter-host "$RESTIC_HOST" \
-		"$SNAPSHOT:$restore_path" \
-		"$restore_path"; then
+	args=(
+		--cache-dir "$RESTIC_CACHE_DIR"
+		--password-file "$RESTIC_PASSWORD_FILE"
+	)
+	[ -f "$RESTIC_REPOSITORY_FILE" ] && args+=(--repository "$(cat "$RESTIC_REPOSITORY_FILE")")
+	args+=(--filter-host "$RESTIC_HOST" "$SNAPSHOT:$restore_path" "$restore_path")
+
+	if ! rustic restore "${args[@]}"; then
 		exit_code=$?
 		if compgen -G "/tmp/report-*.*" >/dev/null; then
 			for file in /tmp/report-*.*; do
@@ -67,11 +67,8 @@ function restic_restore() {
 		exit "$exit_code"
 	fi
 
-	if [ -f "$restore_path/restore-to" ]; then
-		rm -v "$restore_path/restore-to"
-	fi
+	[ -f "$restore_path/restore-to" ] && rm -v "$restore_path/restore-to"
 }
-
 function has_some_restores() {
 	restore_path="$1"
 
