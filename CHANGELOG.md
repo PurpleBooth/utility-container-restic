@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.13.1 - 2025-04-09
+#### Bug Fixes
+- **(deps)** update ubuntu:latest docker digest to 1e622c5 - (0f8d000) - renovate[bot]
+#### Refactoring
+- **(script)** simplify restic restore function with cleaner args - (4290991) - Billie Thompson
+
+- - -
+
 ## v0.13.0 - 2025-04-09
 #### Features
 - **(scripts)** add debug mode support with DEBUG environment variable - (67cfce7) - Billie Thompson
