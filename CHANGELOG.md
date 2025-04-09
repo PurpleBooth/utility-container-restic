@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.12.5 - 2025-04-09
+#### Bug Fixes
+- handle case when report doesn't exist - (21c7eba) - Billie Thompson
+
+- - -
+
 ## v0.12.4 - 2025-04-09
 #### Bug Fixes
 - back out init stuff - (87f8cde) - Billie Thompson
