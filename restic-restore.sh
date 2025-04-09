@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+if [[ ${DEBUG:-} == "true" ]]; then
+	set -x
+fi
+
 restore_dirs=()
 
 RESTIC_CACHE_DIR="${RESTIC_CACHE_DIR:-/cache}"
